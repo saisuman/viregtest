@@ -18,7 +18,7 @@ Here's how you can get this to run:
 `$ wget https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_linux64.zip && unzip chromedriver_linux64.zip`
 
 6. Make sure the chromedriver binary is in your path.
-`$ export PATH=$PATH:`pwd``
+`$ export PATH=$PATH:$(pwd)`
 
 7. Run it!
 `$ python3 main.py`
