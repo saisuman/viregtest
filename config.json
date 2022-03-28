@@ -1,0 +1,38 @@
+{
+	"environment": {
+		"name": "Demo Run",
+		"max_retries": 2,
+		"output_directory": "/home/saisuman/vireg/run"
+	},
+	"test_case_sets": [
+		{
+			"name": "enwiki_tests",
+			"scenarios": [
+				"default",
+				"tamper"
+			],
+			"url_pairs": [
+				{
+					"baseline_url": "http://en.wikipedia.org/wiki/Car",
+					"test_url": "http://en.wikipedia.org/wiki/Car"
+				},
+				{
+					"baseline_url": "http://en.wikipedia.org/wiki/Cat",
+					"test_url": "http://en.wikipedia.org/wiki/Cat"
+				},
+				{
+					"baseline_url": "http://en.wikipedia.org/wiki/Catamaran",
+					"test_url": "http://en.wikipedia.org/wiki/Catamaran"
+				},
+				{
+					"baseline_url": "http://en.wikipedia.org/wiki/Caravan",
+					"test_url": "http://en.wikipedia.org/wiki/Caravan"
+				},
+				{
+					"baseline_url": "http://en.wikipedia.org/wiki/Camp",
+					"test_url": "http://en.wikipedia.org/wiki/Camp"
+				}
+			]
+		}
+	]
+}

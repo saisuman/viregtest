@@ -1,0 +1,112 @@
+<html>
+    <head>
+        {{#config}}{{#environment}}
+        <title>Visual Reg Test Report : {{name}}</title>
+        {{/environment}}{{/config}}
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <h1>
+            {{#config}}
+                {{#environment}}
+                    Visual Reg Test Report : {{name}}
+                {{/environment}}
+            {{/config}}
+        </h1>
+
+        <div class="summarysection">
+            <div class="summary card collapsible">
+                <table class="statstable">
+                    <tr>
+                        <td class="summarytableheader">
+                            Total URLS Run
+                        </td>
+                        <td class="summarytablevalue">
+                            {{total_runs}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="summarytableheader">
+                            WebDriver Failures
+                        </td>
+                        <td class="summarytablevalue">
+                            {{total_run_failures}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="summarytableheader">
+                            Changes Within Tolerance
+                        </td>
+                        <td class="summarytablevalue">
+                            {{total_in_tolerance}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="summarytableheader">
+                            Visual Regressions
+                        </td>
+                        <td class="summarytablevalue">
+                            {{total_visual_regressions}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="summarytableheader">
+                            Perfect Matches
+                        </td>
+                        <td class="summarytablevalue">
+                            {{total_perfect_matches}}
+                        </total_perfect_matches>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="casesection">
+            {{#runs}}
+            <div class="case card">
+                {{#run_infos}}
+                <div class="togglescreenshot">
+                    <img src="{{baseline_screenshot}}" class="baseimg">
+                    <img src="{{test_screenshot}}" class="testimg">
+                </div>
+                <table class="statstable">
+                    <tr>
+                        <td>
+                            Test Case Set {{test_case_name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="{{baseline_screenshot}}" target="new">[BASE IMG]</a> | 
+                            <a href="{{test_screenshot}}" target="new">[TEST IMG]</a> |
+                            <a href="{{baseline_url}}" target="new">[BASE URL]</a> |
+                            <a href="{{test_url}}" target="new">[TEST URL]</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Status {{#test_status}}{{code}}<br>{{message}}{{/test_status}}
+                        </td>
+                    </tr>
+                    {{#report}}
+                    <tr>
+                        <td>
+                            <span class="{{result}}">{{result}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Diff {{diff_percentage}} %
+                        </td>
+                    </tr>
+                    {{/report}}
+                </table>
+                {{/run_infos}}
+            </div>
+            {{/runs}}    
+        </div>
+
+    </body> 
+
+</html>

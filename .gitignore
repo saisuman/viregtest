@@ -1,0 +1,11 @@
+__pycache__/*
+bin/*
+lib/*
+*.pyc
+run/*
+chromedriver
+geckodriver.log
+report.html
+share/
+pyvenv.cfg
+lib64
