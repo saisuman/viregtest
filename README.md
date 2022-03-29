@@ -14,7 +14,7 @@ Here's how you can get this to run:
 4. Install all the packages you need.  
 `$  cat requirements.txt  | xargs pip3 install`  
   
-5. Install chromedriver.  
+5. Install chromedriver (this is the 64-bit Linux version - go to https://chromedriver.chromium.org/ if you're on another OS).  
 `$ wget https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_linux64.zip && unzip chromedriver_linux64.zip`  
   
 6. Make sure the chromedriver binary is in your path.  

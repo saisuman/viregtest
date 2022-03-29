@@ -2,7 +2,7 @@
 	"environment": {
 		"name": "Demo Run",
 		"max_retries": 2,
-		"output_directory": "/home/saisuman/vireg/run"
+		"output_directory": "./run"
 	},
 	"test_case_sets": [
 		{
